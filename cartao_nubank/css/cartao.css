@@ -1,0 +1,121 @@
+body {
+    background: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Animação que faz o cartão mostrar a parte de trás */
+main {
+    width: 100%;
+    height: 100%;
+}
+.conteiner {
+    margin: 30vh auto 0 auto;
+    width: 370px;
+    height: 200px;
+    position: relative;
+    perspective: 700px;
+}
+.front, .back {
+    background: linear-gradient(90deg, #913FC5, #852DA5, #791C84); 
+    width: 370px;
+    height: 200px;
+    position: absolute;  
+    transition: 700ms; 
+    border-radius: 10px;
+}
+.front {
+    z-index: 1;
+}
+.back {
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+}
+.conteiner:hover .front {
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+.conteiner:hover .back{
+    transform: rotateY(0);
+    z-index: 1;
+}
+/* ---------------------------------  fim --------------------------------- */
+
+/* Parte da frente do cartão */
+.front #logoMastercard {
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+/* parte da imagem do chip e a imagem do contactless */
+.front #chipDoCartao {
+    margin-top: 60px;
+    margin-left: 35px;
+}
+.front #sinalContactless {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+/* --------------------------------------- */
+/* parte que tem o nome da pessoa e a logo do Nubank */
+.front .logoENomeDoDesenvolvedor {
+    display: flex;
+    margin-top: 40px;
+}
+.front #logoDoNubank {
+    margin-left: 30px;
+}
+.front #nomeDoDesenvolvedor {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: white;
+}
+/* --------------------------------------- */
+/* ---------------------------------  fim --------------------------------- */
+
+/* parte de trás do cartão */
+/* essa é a parte um retangulo branco no topo da parte de trás do cartão */
+.back #linhaBranca {
+    margin-top: 20px;
+    background: #BCBCBC;
+    width: 100%;
+    height: 40px;
+}
+/* --------------------------------------- */
+
+/* essa é a parte que tem o número do cartão e a logo cirrus */
+.leftright {
+    display: flex;
+    justify-content: space-between;
+    margin: 77px 15px 0 20px;
+}
+.leftright .left p {
+    color: white;
+    font-size: 1.7em;
+}
+/* --------------------------------------- */
+
+/* parte que tem as informações de "código de segurança, validade do cartão e data de membro" */
+.validadeECodigoDeSeguranca {
+    display: flex;
+    margin-left: 20px;
+    color: white;
+}
+.validadeECodigoDeSeguranca div {
+    margin-right: 15px;
+    display: flex;
+}
+.validadeECodigoDeSeguranca .nomes {
+    width: 40px;
+    font-weight: normal;
+    font-size: .4em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.validadeECodigoDeSeguranca .datas {
+    margin-left: 3px;
+}
+/* --------------------------------------- */
+/* ---------------------------------  fim --------------------------------- */
